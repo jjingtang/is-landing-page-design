@@ -398,7 +398,8 @@ export default function AboutPage() {
           <footer className="is-footer">
             <p className="is-footer-copy">
               Declaration: This is not an official website for Invisible Skin,
-              and it is only for design purpose.
+              It is made by <a href="https://x.com/inntown13" className='hover:text-color-blue'>@inntown13</a> as a fan project. All information is based on publicly available sources and may not be accurate. 
+              Please contact me if any rights holder believes that this content infringes their rights or may adversely affect their brand.
             </p>
           </footer>
         </div>
