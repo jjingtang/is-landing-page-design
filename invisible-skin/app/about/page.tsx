@@ -4,6 +4,7 @@ const founders = [
   {
     // TODO: Replace with the first founder's real name.
     name: 'Priscilla Hon',
+    instagramHref: 'https://www.instagram.com/priscilla_hon/',
     role: 'Co-founder',
     image: '/imgs/profile/1.jpeg',
     alt: 'Priscilla Hon',
@@ -21,12 +22,13 @@ const founders = [
   {
     // TODO: Replace with the second founder's real name.
     name: 'Karolína Muchová',
+    instagramHref: 'https://www.instagram.com/karolinamuchova/?hl=en',
     role: 'Co-founder',
     image: '/imgs/profile/2.png',
     alt: 'Karolína Muchová',
     // TODO: Replace this placeholder description with the real founder bio.
     description:
-      'She brings the vibe, 2 titles and a dream.',
+      'She brings the vibe, 2 titles and a dream. 3rd title is on the way, and so is the new product.',
     align: 'right',
   },
 ] as const
@@ -46,22 +48,38 @@ function FounderCard({
         animation: `is-fadein 1.1s cubic-bezier(0.22, 1, 0.36, 1) ${0.12 + index * 0.16}s both`,
       }}
     >
-      <div
-        className="is-founder-image"
-        role="img"
-        aria-label={founder.alt}
-        style={{
-          backgroundImage: `linear-gradient(135deg, rgba(255, 220, 170, 0.05) 0%, rgba(245, 240, 232, 0.02) 56%, rgba(180, 130, 80, 0.06) 100%), url(${founder.image})`,
-        }}
+      <a
+        className="is-founder-image-link"
+        href={founder.instagramHref}
+        target="_blank"
+        rel="noreferrer"
       >
-        <div className="is-founder-grain" aria-hidden />
-        <div className="is-founder-vignette" aria-hidden />
-        <div className="is-founder-frame" aria-hidden />
-      </div>
+        <div
+          className="is-founder-image"
+          role="img"
+          aria-label={founder.alt}
+          style={{
+            backgroundImage: `linear-gradient(135deg, rgba(255, 220, 170, 0.05) 0%, rgba(245, 240, 232, 0.02) 56%, rgba(180, 130, 80, 0.06) 100%), url(${founder.image})`,
+          }}
+        >
+          <div className="is-founder-grain" aria-hidden />
+          <div className="is-founder-vignette" aria-hidden />
+          <div className="is-founder-frame" aria-hidden />
+        </div>
+      </a>
 
       <div className="is-founder-copy">
         <p className="is-founder-role">{founder.role}</p>
-        <h2 className="is-founder-name">{founder.name}</h2>
+        <h2 className="is-founder-name">
+          <a
+            className="is-founder-name-link"
+            href={founder.instagramHref}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {founder.name}
+          </a>
+        </h2>
         <p className="is-founder-description">
           {founder.description}{' '}
           {'reference' in founder ? (
@@ -211,6 +229,12 @@ export default function AboutPage() {
           filter: sepia(0.12) saturate(0.9) contrast(0.95) brightness(1.03);
         }
 
+        .is-founder-image-link {
+          display: block;
+          color: inherit;
+          text-decoration: none;
+        }
+
         .is-founder-grain {
           position: absolute;
           inset: 0;
@@ -268,6 +292,17 @@ export default function AboutPage() {
           line-height: 1.08;
           color: #2e2a25;
           white-space: nowrap;
+        }
+
+        .is-founder-name-link {
+          color: inherit;
+          text-decoration: none;
+          transition: color 180ms ease;
+        }
+
+        .is-founder-name-link:hover,
+        .is-founder-name-link:focus-visible {
+          color: #d4621a;
         }
 
         .is-founder-description {
