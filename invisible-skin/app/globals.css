@@ -115,7 +115,6 @@ canvas {
 }
 
 .wipe-zone {
-  cursor: none;
   touch-action: none;
 }
 

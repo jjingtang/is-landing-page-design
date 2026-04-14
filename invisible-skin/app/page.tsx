@@ -5,7 +5,6 @@ import BackgroundLayer from '@/components/BackgroundLayer'
 import HeroLockup from '@/components/HeroLockup'
 import LiquidGlassLayer from '@/components/LiquidGlassLayer'
 import Navigation from '@/components/Navigation'
-import WipeCursor from '@/components/WipeCursor'
 
 const MIST_CLOUDS = [
   { x: 0.16, y: 0.12, radius: 0.22, alpha: 0.34 },
@@ -17,8 +16,6 @@ const MIST_CLOUDS = [
 export default function Home() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [wipeProgress, setWipeProgress] = useState(0)
-  const [cursorPos, setCursorPos] = useState({ x: -200, y: -200 })
-  const [isPressing, setIsPressing] = useState(false)
   const isPressingRef = useRef(false)
 
   const paintMist = useCallback(
@@ -104,19 +101,16 @@ export default function Home() {
   }, [])
 
   const onMouseMove = useCallback((e: React.MouseEvent) => {
-    setCursorPos({ x: e.clientX, y: e.clientY })
     if (isPressingRef.current) erase(e.clientX, e.clientY)
   }, [erase])
 
   const onPointerDown = useCallback((e: React.PointerEvent) => {
     isPressingRef.current = true
-    setIsPressing(true)
     erase(e.clientX, e.clientY)
   }, [erase])
 
   const onPointerUp = useCallback(() => {
     isPressingRef.current = false
-    setIsPressing(false)
   }, [])
 
   const onTouchMove = useCallback((e: React.TouchEvent) => {
@@ -148,9 +142,6 @@ export default function Home() {
 
       {/* Navigation — always visible */}
       <Navigation />
-
-      {/* Custom cursor */}
-      <WipeCursor x={cursorPos.x} y={cursorPos.y} pressing={isPressing} />
     </div>
   )
 }

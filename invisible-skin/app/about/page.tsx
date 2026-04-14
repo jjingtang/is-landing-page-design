@@ -1,110 +1,110 @@
 import Navigation from '@/components/Navigation'
 
 const founders = [
-  {
-    // TODO: Replace with the first founder's real name.
-    name: 'Priscilla Hon',
-    instagramHref: 'https://www.instagram.com/priscilla_hon/',
-    role: 'Co-founder',
-    image: '/imgs/profile/1.jpeg',
-    alt: 'Priscilla Hon',
-    // TODO: Replace this placeholder description with the real founder bio.
-    description:
-      'The people have spoken: she’s',
-    reference: {
-      href: 'https://x.com/linkamuch/status/2041985276373831774?s=20',
-      label: 'the real boss of the brand',
+    {
+        // TODO: Replace with the first founder's real name.
+        name: 'Priscilla Hon',
+        instagramHref: 'https://www.instagram.com/priscilla_hon/',
+        role: 'Co-founder',
+        image: '/imgs/profile/1.jpeg',
+        alt: 'Priscilla Hon',
+        // TODO: Replace this placeholder description with the real founder bio.
+        description:
+            'The people have spoken: she’s',
+        reference: {
+            href: 'https://x.com/linkamuch/status/2041985276373831774?s=20',
+            label: 'the real boss of the brand',
+        },
+        descriptionAfter:
+            '. The visionary behind the product, and the creative director of every detail.',
+        align: 'left',
     },
-    descriptionAfter:
-      '. The visionary behind the product, and the creative director of every detail.',
-    align: 'left',
-  },
-  {
-    // TODO: Replace with the second founder's real name.
-    name: 'Karolína Muchová',
-    instagramHref: 'https://www.instagram.com/karolinamuchova/?hl=en',
-    role: 'Co-founder',
-    image: '/imgs/profile/2.png',
-    alt: 'Karolína Muchová',
-    // TODO: Replace this placeholder description with the real founder bio.
-    description:
-      'She brings the vibe, 2 titles and a dream. 3rd title is on the way, and so is the new product.',
-    align: 'right',
-  },
+    {
+        // TODO: Replace with the second founder's real name.
+        name: 'Karolína Muchová',
+        instagramHref: 'https://www.instagram.com/karolinamuchova/?hl=en',
+        role: 'Co-founder',
+        image: '/imgs/profile/2.png',
+        alt: 'Karolína Muchová',
+        // TODO: Replace this placeholder description with the real founder bio.
+        description:
+            'She brings the vibe, 2 titles and a dream. 3rd title is on the way, and so is the new product.',
+        align: 'right',
+    },
 ] as const
 
 function FounderCard({
-  founder,
-  index,
+    founder,
+    index,
 }: {
-  founder: (typeof founders)[number]
-  index: number
+    founder: (typeof founders)[number]
+    index: number
 }) {
-  return (
-    <article
-      className="is-founder"
-      data-align={founder.align}
-      style={{
-        animation: `is-fadein 1.1s cubic-bezier(0.22, 1, 0.36, 1) ${0.12 + index * 0.16}s both`,
-      }}
-    >
-      <a
-        className="is-founder-image-link"
-        href={founder.instagramHref}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div
-          className="is-founder-image"
-          role="img"
-          aria-label={founder.alt}
-          style={{
-            backgroundImage: `linear-gradient(135deg, rgba(255, 220, 170, 0.05) 0%, rgba(245, 240, 232, 0.02) 56%, rgba(180, 130, 80, 0.06) 100%), url(${founder.image})`,
-          }}
+    return (
+        <article
+            className="is-founder"
+            data-align={founder.align}
+            style={{
+                animation: `is-fadein 1.1s cubic-bezier(0.22, 1, 0.36, 1) ${0.12 + index * 0.16}s both`,
+            }}
         >
-          <div className="is-founder-grain" aria-hidden />
-          <div className="is-founder-vignette" aria-hidden />
-          <div className="is-founder-frame" aria-hidden />
-        </div>
-      </a>
-
-      <div className="is-founder-copy">
-        <p className="is-founder-role">{founder.role}</p>
-        <h2 className="is-founder-name">
-          <a
-            className="is-founder-name-link"
-            href={founder.instagramHref}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {founder.name}
-          </a>
-        </h2>
-        <p className="is-founder-description">
-          {founder.description}{' '}
-          {'reference' in founder ? (
-            <>
-              <a
-                className="is-founder-link"
-                href={founder.reference.href}
+            <a
+                className="is-founder-image-link"
+                href={founder.instagramHref}
                 target="_blank"
                 rel="noreferrer"
-              >
-                {founder.reference.label}
-              </a>
-              {founder.descriptionAfter}
-            </>
-          ) : null}
-        </p>
-      </div>
-    </article>
-  )
+            >
+                <div
+                    className="is-founder-image"
+                    role="img"
+                    aria-label={founder.alt}
+                    style={{
+                        backgroundImage: `linear-gradient(135deg, rgba(255, 220, 170, 0.05) 0%, rgba(245, 240, 232, 0.02) 56%, rgba(180, 130, 80, 0.06) 100%), url(${founder.image})`,
+                    }}
+                >
+                    <div className="is-founder-grain" aria-hidden />
+                    <div className="is-founder-vignette" aria-hidden />
+                    <div className="is-founder-frame" aria-hidden />
+                </div>
+            </a>
+
+            <div className="is-founder-copy">
+                <p className="is-founder-role">{founder.role}</p>
+                <h2 className="is-founder-name">
+                    <a
+                        className="is-founder-name-link"
+                        href={founder.instagramHref}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {founder.name}
+                    </a>
+                </h2>
+                <p className="is-founder-description">
+                    {founder.description}{' '}
+                    {'reference' in founder ? (
+                        <>
+                            <a
+                                className="is-founder-link"
+                                href={founder.reference.href}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {founder.reference.label}
+                            </a>
+                            {founder.descriptionAfter}
+                        </>
+                    ) : null}
+                </p>
+            </div>
+        </article>
+    )
 }
 
 export default function AboutPage() {
-  return (
-    <>
-      <style>{`
+    return (
+        <>
+            <style>{`
         .is-page {
           position: relative;
           height: 100vh;
@@ -404,41 +404,46 @@ export default function AboutPage() {
         }
       `}</style>
 
-      <main className="is-page">
-        <div className="is-grain" aria-hidden />
-        <div className="is-sun is-sun-a" aria-hidden />
-        <div className="is-sun is-sun-b" aria-hidden />
+            <main className="is-page">
+                <div className="is-grain" aria-hidden />
+                <div className="is-sun is-sun-a" aria-hidden />
+                <div className="is-sun is-sun-b" aria-hidden />
 
-        <div className="is-shell">
-          <header className="is-header">
-            <Navigation />
-          </header>
+                <div className="is-shell">
+                    <header className="is-header">
+                        <Navigation />
+                    </header>
 
-          <div className="is-inner">
-            <section className="is-stage" aria-label="Founders">
-              <p className="is-kicker">Our Founders</p>
+                    <div className="is-inner">
+                        <section className="is-stage" aria-label="Founders">
+                            <p className="is-kicker">Our Founders</p>
 
-              <div className="is-grid">
-                {founders.map((founder, index) => (
-                  <FounderCard
-                    key={founder.name}
-                    founder={founder}
-                    index={index}
-                  />
-                ))}
-              </div>
-            </section>
-          </div>
+                            <div className="is-grid">
+                                {founders.map((founder, index) => (
+                                    <FounderCard
+                                        key={founder.name}
+                                        founder={founder}
+                                        index={index}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    </div>
 
-          <footer className="is-footer">
-            <p className="is-footer-copy">
-              Declaration: This is not an official website for Invisible Skin,
-              It is made by <a href="https://x.com/inntown13" className='hover:text-blue-600'>@inntown13</a> as a fan project. All information is based on publicly available sources and may not be accurate. 
-              Please contact me if any rights holder believes that this content infringes their rights or may adversely affect their brand.
-            </p>
-          </footer>
-        </div>
-      </main>
-    </>
-  )
+                    <footer className="is-footer">
+                        <p className="is-footer-copy">
+                            Declaration: This is not an official website for Invisible Skin,
+                            It is made by <a
+                                href="https://x.com/inntown13"
+                                className="is-founder-link"
+                            >
+                                @inntown13
+                            </a> as a fan project. All information is based on publicly available sources and may not be accurate.
+                            Please contact me if any rights holder believes that this content infringes their rights or may adversely affect their brand.
+                        </p>
+                    </footer>
+                </div>
+            </main>
+        </>
+    )
 }
