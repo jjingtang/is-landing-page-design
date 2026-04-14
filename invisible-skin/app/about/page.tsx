@@ -26,7 +26,7 @@ const founders = [
     alt: 'Karolína Muchová',
     // TODO: Replace this placeholder description with the real founder bio.
     description:
-      'She brings the vibe.',
+      'She brings the vibe, 2 titles and a dream.',
     align: 'right',
   },
 ] as const
@@ -381,7 +381,7 @@ export default function AboutPage() {
 
           <div className="is-inner">
             <section className="is-stage" aria-label="Founders">
-              <p className="is-kicker">Founders</p>
+              <p className="is-kicker">Our Founders</p>
 
               <div className="is-grid">
                 {founders.map((founder, index) => (
@@ -398,7 +398,7 @@ export default function AboutPage() {
           <footer className="is-footer">
             <p className="is-footer-copy">
               Declaration: This is not an official website for Invisible Skin,
-              It is made by <a href="https://x.com/inntown13" className='hover:text-color-blue'>@inntown13</a> as a fan project. All information is based on publicly available sources and may not be accurate. 
+              It is made by <a href="https://x.com/inntown13" className='hover:text-blue-600'>@inntown13</a> as a fan project. All information is based on publicly available sources and may not be accurate. 
               Please contact me if any rights holder believes that this content infringes their rights or may adversely affect their brand.
             </p>
           </footer>
