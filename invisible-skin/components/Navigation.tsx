@@ -126,27 +126,7 @@ export default function Navigation() {
           font-weight: 500;
           line-height: 1;
           letter-spacing: 0.01em;
-          color: transparent;
-          background-image: linear-gradient(
-            118deg,
-            #d4621a 0%,
-            #d4621a 36%,
-            rgba(245, 240, 232, 0.28) 43%,
-            rgba(255, 244, 213, 0.72) 48%,
-            rgba(255, 249, 235, 0.9) 50%,
-            rgba(255, 239, 190, 0.76) 54%,
-            rgba(245, 240, 232, 0.24) 60%,
-            #d4621a 100%
-          );
-          background-size: 280% 100%;
-          background-position: 140% 0;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .liquid-nav-link:hover {
-          animation: liquid-nav-text-sunbeam 2.8s ease-in-out infinite;
+          color: #d4621a;
         }
 
         .liquid-nav-cta {
@@ -210,19 +190,6 @@ export default function Navigation() {
           animation: liquid-nav-sunfall 3.1s ease-in-out infinite;
         }
 
-        @keyframes liquid-nav-text-sunbeam {
-          0%,
-          16% {
-            background-position: 145% 0;
-          }
-          48% {
-            background-position: 44% 0;
-          }
-          100% {
-            background-position: -45% 0;
-          }
-        }
-
         @keyframes liquid-nav-sunfall {
           0% {
             opacity: 0;
@@ -244,7 +211,6 @@ export default function Navigation() {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .liquid-nav-link:hover,
           .liquid-nav-cta:hover::after {
             animation: none;
           }
